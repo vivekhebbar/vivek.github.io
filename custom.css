@@ -1,0 +1,11 @@
+body{
+	font-family:'Lucida Grande';
+}
+
+.navbar-default {
+    background-color: #000000;
+    border-color: #E7E7E7;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+}
