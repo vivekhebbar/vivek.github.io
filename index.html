@@ -19,28 +19,32 @@
     <div class="peg"><a href="https://www.linkedin.com/in/vivekhebbar" target="_blank">LINKEDIN</a></div>
     <div class="peg"><a href="https://github.com/vivekhebbar" target="_blank">GITHUB</a></div>
     <div class="peg"><a href="resume.pdf" target="_blank">RESUME</a></div>
-    <div class="peg"><a href="mailto:vivek.hebbar@berkeley.edu" target="_blank">EMAIL</a></div>
+    <div class="peg"><a href="mailto:vivek.hebbar@berkeley.edu" target="_blank">EMAIL</b></a></div>
   </div>
 
   <div id="click">
     <div id="about-click">
-      <h1><a href="#">ABOUT</a></h1>
+      <h1 id="about-txt" onclick="document.getElementById('about').style.visibility = (document.getElementById('about').style.visibility == 'hidden') ? 'visible':'hidden'; document.getElementById('projects').style.visibility='hidden'; document.getElementById('other').style.visibility='hidden';"><a href="#">ABOUT</a></h1>
     </div>
     <div id="projects-click">
-      <h1><a href="#">PROJECTS</a></h1>
+      <h1 id="projects-txt" onclick="document.getElementById('projects').style.visibility = (document.getElementById('projects').style.visibility == 'hidden') ? 'visible':'hidden'; document.getElementById('about').style.visibility='hidden'; document.getElementById('other').style.visibility='hidden';"><a href="#">PROJECTS</a></h1>
     </div>
     <div id="other-click">
-      <h1><a href="#">OTHER</a></h1>
+      <h1 id="other-txt" onclick="document.getElementById('other').style.visibility = (document.getElementById('other').style.visibility == 'hidden') ? 'visible':'hidden'; document.getElementById('about').style.visibility='hidden'; document.getElementById('projects').style.visibility='hidden';"><a href="#">OTHER</a></h1>
     </div>
   </div>
   
-  <div id="about">
-    <p>lorem ipsum</p>
+  <div id="about" class="content">
+    <h2>About Me</h2>
+    <p>Hey! My name is Vivek Hebbar, and I am a second year EECS major at Cal. This is my website. I was born and raised in good old Raleigh, North Carolina. </p>
   </div>
-  <div id="projects">
-    <p>coming soon</p>
+  <div id="projects" class="content">
+    <h2>My Projects</h2>
+    <p>coming soon </p>
   </div>
-  <div id="other">
-    <p>other</p>
+  <div id="other" class="content">
+    <h2>Other Cool Stuff</h2>
+    <p>I want to dedicate this section to cool things I have found through classes and mindless web searching. </p>
+  </div>
 </body>
 </html>

@@ -9,14 +9,15 @@ body{
 	font-family: 'Lato', sans-serif;
 	font-weight:100;
 	width:100%;
+	overflow:hidden;
 }
 a {
 	text-decoration: none;
 	color:inherit;
 }
-/*div {
-	border-style: solid;
-}*/
+div h2 { 
+	text-align: center;
+}
 .intro {
 	position: absolute;
 	top: 0px;
@@ -63,11 +64,10 @@ a {
 }
 #click{
 	clear: both;
-	margin-top: 10%;
+	margin-top: 150px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 70%;
-	height: 300px;
 }
 #about-click{
 	clear: left;
@@ -79,7 +79,6 @@ a {
 	float: left;
 	text-align: center;
 	width: 33%;
-
 }
 #other-click{
 	float: left;
@@ -87,25 +86,16 @@ a {
 	text-align: right;
 	width: 33%;
 }
-#about{
-	position: absolute;
+.content {
 	overflow: hidden;
-	bottom: 0px;
-	width:100%;
-	height: 2%;
-}
-#projects{
 	position: absolute;
-	overflow: hidden;
-	bottom: 0px;
-	width: 100%;
-	height: 1%;
+	top: 35%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 1%;
+	width:80%;
+	height:400px;
+	background-color:rgba(100,100,100,.8);
+	border-radius:25px;
+	visibility: hidden;
 }
-#other{
-	position: absolute;
-	overflow: hidden;
-	bottom: 0px;
-	width: 100%;
-	height: 0%;
-}
-
