@@ -7,16 +7,14 @@ body{
   	background-size: cover;
 	color: white;
 	font-family: 'Lato', sans-serif;
-	font-weight:100;
-	width:100%;
-	overflow:hidden;
+	font-weight: 100;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
 }
 a {
 	text-decoration: none;
 	color:inherit;
-}
-div h2 { 
-	text-align: center;
 }
 .intro {
 	position: absolute;
@@ -60,7 +58,6 @@ div h2 {
 	margin-top: .5%;
 	margin-left: 100px;
 	float: left;
-	text-align: center;
 }
 #click{
 	clear: both;
@@ -77,7 +74,6 @@ div h2 {
 }
 #projects-click{
 	float: left;
-	text-align: center;
 	width: 33%;
 }
 #other-click{
@@ -87,15 +83,42 @@ div h2 {
 	width: 33%;
 }
 .content {
-	overflow: hidden;
+	overflow: auto;
 	position: absolute;
 	top: 35%;
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-bottom: 1%;
-	width:80%;
-	height:400px;
+	width:85%;
+	min-height:40%;
+	max-height:60%;
 	background-color:rgba(100,100,100,.8);
 	border-radius:25px;
 	visibility: hidden;
+}
+.content h2 {
+	font-size: 36px;
+	font-weight: 200;
+}
+.content p {
+	text-align: left;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.about-words {
+	width: 65%;
+	clear: right;
+	float: left;
+}
+.about-img {
+	margin-top: 1%;
+	width: 35%;
+	float: left;
+	clear: left;
+}
+.about-img img{
+	width: 60%;
+	border-style: solid;
+	border-color: white;
+	border-radius: 4px;
 }
