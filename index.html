@@ -1,59 +1,37 @@
-<!doctype html> 
-<html> 
-<head> 
-  <title>Vivek Hebbar</title>
-  <!-- Font library -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
-  <!-- CSS -->
-  <link rel="stylesheet" href="main.css">
-  <!-- jQuery CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <!-- Other JS stuff -->
-</head>
-<body>
-  <div class="intro">
-    <div class="title"><a href="index.html">VIVEK HEBBAR</a></div>
-    <div class="circular"><img src="img/intro-img.jpg"></div>
-    <div class="peg">BERKELEY '17</div>
-    <div class="peg">EECS</div>
-    <div class="peg"><a href="https://www.linkedin.com/in/vivekhebbar" target="_blank">LINKEDIN</a></div>
-    <div class="peg"><a href="https://github.com/vivekhebbar" target="_blank">GITHUB</a></div>
-    <div class="peg"><a href="resume.pdf" target="_blank">RESUME</a></div>
-    <div class="peg"><a href="mailto:vivek.hebbar@berkeley.edu" target="_blank">EMAIL</a></div>
-  </div>
-
-  <div id="click">
-    <div id="about-click">
-      <h1 id="about-txt" onclick="document.getElementById('about').style.visibility = (document.getElementById('about').style.visibility == 'hidden') ? 'visible':'hidden'; document.getElementById('projects').style.visibility='hidden'; document.getElementById('other').style.visibility='hidden';"><a href="#">ABOUT</a></h1>
-    </div>
-    <div id="projects-click">
-      <h1 id="projects-txt" onclick="document.getElementById('projects').style.visibility = (document.getElementById('projects').style.visibility == 'hidden') ? 'visible':'hidden'; document.getElementById('about').style.visibility='hidden'; document.getElementById('other').style.visibility='hidden';"><a href="#">PROJECTS</a></h1>
-    </div>
-    <div id="other-click">
-      <h1 id="other-txt" onclick="document.getElementById('other').style.visibility = (document.getElementById('other').style.visibility == 'hidden') ? 'visible':'hidden'; document.getElementById('about').style.visibility='hidden'; document.getElementById('projects').style.visibility='hidden';"><a href="#">OTHER</a></h1>
-    </div>
-  </div>
-  
-  <div id="about" class="content">
-    <div class="about-img">
-      <img src="img/about-img.jpg" alt="Pretend like I'm not cheap and actually bought my composite photo">
-      <p style="font-size: 12px; text-align: center">If you imagine that I wasn't cheap and actually bought my composite photo, the watermark disappears. Try it out!</p>
-    </div>
-    <div class="about-words">
-      <h2>ABOUT ME</h2>
-      <p>Hey! My name is Vivek Hebbar, and I am a fourth year EECS major at Cal. This is my website. I was born and raised in good old Raleigh, North Carolina. <br><br>A little bit about myself. <br><br>I am very interested in artificial intelligence and machine learning, especially consumer-facing applications of AI found in products such as Apple's Siri and Amazon's Echo. <br><br> In my free time (and when I have the motivation), I try to apply the concepts I learn in the classrooms of Berkeley to projects and ideas that intrigue me. One such example is applying machine learning and advanced algorithms to optimizing daily fantasy sports (DraftKings) lineups. With a group of friends, I built a program that scraped the web for player statistics, used linear regression to predict the fantasy points each player may score for a given day, and scripted an algorithm to choose the best players when supplied salary constraints. <br><br> I am also currently working on (1) a conversational chatbot that can provide personalized recommendations on provided subject matters, and (2) an artificial intelligence agent which will not require cue commands (i.e. "Hey Siri", "Alexa", etc.), and which will provide contextual insight to users before, during, and after their interactions with the people in their lives.</p>
-    </div>
-  </div>
-  <div id="projects" class="content">
-    <p style="font-size: 80px; text-align: center">COMING <br> SOON</p>
-    <p style="text-align: center">But in the meantime, isn't this website good enough?</p>
-  </div>
-  <div id="other" class="content">
-    <h2>COOL STUFF</h2>
-    <p>I want to dedicate this section to cool things I have found through classes and mindless web searching. However, it may turn out to just become an area that I use to look impressingly deep and sophisticated.</p>
-    <p><b><a href="http://www.amazon.com/The-Martian-Novel-Andy-Weir-ebook/dp/B00EMXBDMA" target="_blank"><u><i>The Martian</i> &nbsp;by Andy Weir</u></b></a> was recommended to me by a dear friend. It is an enthralling tale of a stranded astronaut on the surface of Mars, and his consequent struggles to stay alive. Although I am of the opinion that we should colonize the Moon before taking part in any sort of Mars shenanigans, the book appealed to my deep passion for exploring space and planets and NASA in general. This book reminded me of the endless joy that is reading so definitely read it to find out what happens!</p>
-    <p> <b><a href="http://www.physics.princeton.edu/ph115/LQ.pdf" target="_blank"><u>"The Last Question"</u></a></b> by Isaac Asimov is a piece that I stumbled upon when I was pondering the extent to which technology would infiltrate our lives in the future. Rather than stimulate new thoughts and introspection, the idea posited by this short story planted itself into my brain and now I take its conclusion as the inevitable truth mankind is destined for. Great read!</p>
-    <p> <b><a href="https://unsplash.com/" target="_blank"><u>Unsplash</u></a></b> has some awesome pictures (for free!) that are awesome for desktop backgrounds, casual time-wasting, and making you look artsy in front of your friends. Definitely check it out, especially if you are making a personal website that needs a picture of pebbles on a beach to make it look good!</p>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vivek S Hebbar 24/7">
+    <meta name="author" content="Vivek Hebbar">
+    <title>V's Enlightenment</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+    crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="main.css">
+    <!-- Font library -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+    <!-- Useful arrow icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script type="text/javascript" src="transitions.js"></script>
+    <script type="text/javascript" src="populate.js"></script>
+  </head>
+  <body>
+    <div class="title" id="title-enlighten" ></div>
+    <div class="container" id="presentation-enlighten"></div>
+    <div class="container" id="navi-enlighten"></div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--jquery shenanigans -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    crossorigin="anonymous"></script>
+    <!-- <script src="js/machine_learning.min.js"></script> -->
+  </body>
 </html>
+
+  
