@@ -8,7 +8,9 @@ var game = 'game';
 var about = 'about';
 var projects = 'projects';
 var info = 'info';
-window.onload = function() {populate('intro')};
+window.onload = function() {
+	document.getElementById(idTitle).innerHTML = "LOADING, PLEASE WAIT";
+	populate('intro')};
 
 // dictionary for image files
 var imageDict = {
@@ -41,8 +43,8 @@ var presHTMLDict = {
 	intro : '<h2>My name is Vivek Hebbar, and this is my website. Care to play a game?</h2></br>',
 	game : gamePresHTML,
 	about : "<h2>I am a fourth year EECS major at Cal. I was born and raised in good old Raleigh, North Carolina. <br><br>I am very interested in artificial intelligence and machine learning, especially consumer-facing applications of AI found in products such as Apple's Siri and Amazon's Echo. <br><br> In my free time (and when I have the motivation), I try to apply the concepts I learn in the classrooms of Berkeley to projects and ideas that intrigue me. One such example is applying machine learning and advanced algorithms to optimizing daily fantasy sports (DraftKings) lineups. With a group of friends, I built a program that scraped the web for player statistics, used linear regression to predict the fantasy points each player may score for a given day, and scripted an algorithm to choose the best players when supplied salary constraints. <br><br> I am also currently working on (1) a conversational chatbot that can provide personalized recommendations on provided subject matters, and (2) an artificial intelligence agent which will not require cue commands (i.e. Hey Siri, Alexa, etc.), and which will provide contextual insight to users before, during, and after their interactions with the people in their lives.</h2>",
-	projects : '',
-	info : ''
+	projects : '<h2>COMING SOON</h2>',
+	info : '<h2><a class="link" href="resume.pdf" target="_blank">Resume&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a></h2><br><h2><a class="link" href="https://github.com/vivekhebbar" target="_blank">GitHub&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a></h2><br><h2><a class="link" href="https://www.linkedin.com/in/vivekhebbar" target="_blank">LinkedIn&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a></h2><br><h2><a class="link" href="mailto:vivek.hebbar@berkeley.edu" target="_blank">E-Mail&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a></h2>'
 }
 // HTML dictionary for navigation containers
 var naviHTMLDict = {
