@@ -141,4 +141,4 @@ function lineCount(x, y, dir, board) {
 	return min(4, lineCount(x + dir.x, y + dir.y, dir, board));
 }
 //
-function boundsCheck(x, y) {return (x < 0) && (x > 6) && (y < 0) && ( y > 7);}
+function boundsCheck(x, y) {return (x >= 0) && (x < 6) && (y >= 0) && ( y < 7);}
