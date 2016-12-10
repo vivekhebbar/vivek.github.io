@@ -7,7 +7,7 @@ html {
   height: 100%;
 }
 body {
-  background: url(ruins.jpg) no-repeat center center fixed;
+  background: url(car.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -43,7 +43,7 @@ h2 {
 #title-enlighten {
   font-size: 60px;
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   text-align: center;
   width: 100%;  
 }
@@ -51,8 +51,8 @@ h2 {
   display: block;
   border-radius: 25px;
   font-size: 20px;
-  margin-top: 15px;
-  margin-bottom: 40px;
+  margin-top: 5px;
+  margin-bottom: 30px;
   text-align: center;
   width: 90%;
   margin-left: 5%;
@@ -68,10 +68,9 @@ h2 {
   opacity: 0;
 }
 .conn4-circle {
+  border-radius: 50%;
   display: inline-block;
-  width: 13%;
   margin: 1%;
-  border: 3px solid #FFFFFF;
 }
 #navi-enlighten {
   background-opacity: 0;
