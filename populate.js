@@ -35,7 +35,7 @@ var titleHTMLDict = {
 var gamePresHTML = ''
 for (i = 0; i < 7; i++) {
 	for(j = 0; j < 6; j++) {
-		gamePresHTML += '<div class="conn4-circle" id="conn4-' + i.toString() + j.toString() + '"><i class="fa fa-check-circle" aria-hidden="true"></div>';
+		gamePresHTML += '<div class="conn4-circle" id="conn4-' + i.toString() + j.toString() + '"><i class="fa fa-check-circle" aria-hidden="true"></i></div>';
 	}
 } 
 var presHTMLDict = {
