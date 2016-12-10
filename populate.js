@@ -3,16 +3,28 @@ var idPresentation = 'presentation-enlighten';
 var idNavi = 'navi-enlighten';
 window.onload = function() {populate('intro', opq)};
 
-function populate(slide, transition_opt) {
-	switch(transition_opt) {
-		case opq:
-			var nextTime = changeOpacityById(idTitle, titleHTMLDict[slide], 0);
-			changeOpacityById(idPresentation, presHTMLDict[slide], nextTime + 100);
-			changeOpacityById(idNavi, naviHTMLDict[slide], nextTime + 20);
-			break;
+function populate(slide) {
+	var nextTime = changeOpacityById(idTitle, titleHTMLDict[slide], 0);
+	nextTime = changeOpacityById(idPresentation, presHTMLDict[slide], nextTime + 100);
+	changeOpacityById(idNavi, naviHTMLDict[slide], nextTime + 20);
+	if (slide === game) {
+		console.log("here");
+		setTimeout(function(){
+			var conn4 = document.getElementById('conn4-container');
+			if(conn4) {
+				conn4.addEventListener("click", getClickPosition, false);
+			}
+		}, nextTime + 1);
 	}
 }
 
+function getClickPosition(e) {
+	console.log("here2");
+	var x = e.clientX;
+	var y = e.clientY;
+	alert(x);
+	alert(y);
+}
 // Slide names
 var intro = 'intro';
 var game = 'game';
@@ -32,12 +44,13 @@ var titleHTMLDict = {
 	projects : 'COMPLETED/IN PROGRESS PROJECTS',
 	info : 'RESUME + GITHUB + LINKEDIN'
 }
-var gamePresHTML = ''
+var gamePresHTML = '<div class="container" id="conn4-container">'
 for (i = 0; i < 7; i++) {
 	for(j = 0; j < 6; j++) {
 		gamePresHTML += '<div class="conn4-circle" id="conn4-' + i.toString() + j.toString() + '"><i class="fa fa-check-circle" aria-hidden="true"></i></div>';
 	}
 } 
+gamePresHTML += '</div>'
 var presHTMLDict = {
 	intro : '<h2>My name is Vivek Hebbar, and this is my website. Care to play a game?</h2></br>',
 	game : gamePresHTML,
