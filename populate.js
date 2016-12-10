@@ -75,6 +75,7 @@ function populate(slide) {
 	var img = new Image();
 	img.onload = function() {
 		console.log("loaded");
+		$('body').css({'background': 'url(' + imageDict[slide] + ') no-repeat center center fixed', 'background-size': 'cover'});
 		changeOpacityById(idTitle, titleHTMLDict[slide], 300, 1300);
 		changeOpacityById(idPresentation, presHTMLDict[slide], 300, 1800);
 		changeOpacityById(idNavi, naviHTMLDict[slide], 300, 1900);
@@ -83,7 +84,7 @@ function populate(slide) {
 		};
 	}
 	img.src = imageDict[slide];
-	$('body').css({'background': 'url(' + imageDict[slide] + ') no-repeat center center fixed', 'background-size': 'cover'});
+	
 }
 
 
