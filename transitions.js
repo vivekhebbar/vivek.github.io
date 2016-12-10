@@ -19,6 +19,6 @@ function changeHeightById(id, newText, nextTime, newHeight) {
 }
 
 function changeBackgroundImage(newImage) {
-	var body = document.getElementsByTagName('body')[0];
-	body.style.backgroundImage = newImage + 'no-repeat center center fixed;';
+	$('body').css({'background': 'url(' + newImage + ') no-repeat center center fixed', 'background-size': 'cover'});
 }
+
