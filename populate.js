@@ -15,10 +15,10 @@ window.onload = function() {
 // dictionary for image files
 var imageDict = {
 	intro : 'earth.jpg',
-	game : 'woods.jpg',
-	about : 'earth.jpg',
-	projects : 'sunset.jpg',
-	info : 'sky.jpg'
+	game : 'arena.jpg',
+	about : 'woods.jpg',
+	projects : 'cabinet.jpg',
+	info : 'hawk.jpg'
 }
 
 // HTML dictionary for titles
@@ -27,7 +27,7 @@ var titleHTMLDict = {
 	game : 'CONNECT FOUR! YOU START',
 	about : 'ABOUT &#39;V&#39;',
 	projects : 'PAST & PRESENT PROJECTS',
-	info : 'RESUME + GITHUB + LINKEDIN'
+	info : 'CONTACT ME'
 }
 // HTML dictionary for presentation containers
 var gamePresHTML = '<div class="container" id="conn4-container">'
