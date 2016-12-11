@@ -18,8 +18,8 @@ for (i = 0; i < 6; i++) {
 	}
 }
 
-// Eval-check Directions. Array of array of xy dictionaries.
-var directions = [[{x:1,y:0},{x:-1,y:0}],[{x:0,y:1},{x:0,y:-1}],[{x:1,y:1},{x:-1,y:-1}],[{x:1,y:-1}, ,{x:-1,y:1}]];
+// Eval-check Directions.
+var directions = {h:[{x:1,y:0}, {x:-1,y:0}], v:[{x:0,y:1}, {x:0,y:-1}], p:[{x:1,y:1}, {x:-1,y:-1}], n:[{x:1,y:-1}, {x:-1,y:1}]};
 
 // Set up board game AI
 function setup() {
@@ -62,6 +62,9 @@ function color(column) {
 function lineUpdate(column, x){
 	counter += 1;
 	if (x) {
+		for (var dir in directions) {
+
+		}
 		
 	}
 }
@@ -123,22 +126,22 @@ function evaluateBoard(board) {
 				visited[x][y] = 1;
 				for (var dir in directions) {
 					var dir1 = dir[0], dir2 = dir[1];
-					var dirCount = lineCount(x, y, dir1, board) + lineCount(x, y, dir2, board);
-					if (dirCount > 3) {
-						return 1000;
-					}
+					//var dirCount = lineCount(x, y, dir1, board) + lineCount(x, y, dir2, board);
+					//if (dirCount > 3) {
+					//	return 1000;
+					//}
 				}
 			}
 		}
 	}
 }
 //
-function lineCount(x, y, dir, board) {
-	if (!boundsCheck(x, y)) {return 0;}
-	if (board[x + dir.x][y + dir.y] == board[x][y]) {
-		return min(4, 1 + lineCount(x + dir.x, y + dir.y, dir, board));
-	}
-	return min(4, lineCount(x + dir.x, y + dir.y, dir, board));
-}
+// function lineCount(x, y, dir, board) {
+// 	if (!boundsCheck(x, y)) {return 0;}
+// 	if (board[x + dir.x][y + dir.y] == board[x][y]) {
+// 		return min(4, 1 + lineCount(x + dir.x, y + dir.y, dir, board));
+// 	}
+// 	return min(4, lineCount(x + dir.x, y + dir.y, dir, board));
+// }
 //
 function boundsCheck(x, y) {return (x >= 0) && (x < 6) && (y >= 0) && ( y < 7);}

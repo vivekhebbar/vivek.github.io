@@ -19,6 +19,14 @@ body {
   width: 100%;
   text-align: center;
 }
+#symbol {
+  position: absolute;
+  bottom:1%;
+  right:1%;
+  z:2;
+  height: 5%;
+  width: height;
+}
 h2 {
   font-weight: 100;
   font-size: 24px;
