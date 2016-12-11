@@ -60,6 +60,7 @@ h2 {
   background-opacity: 0;
   min-height: 0px;
   max-height: 10%;
+  text-shadow: black 1px 1px;
 }
 #navi-enlighten h2 {
   clear:left;
