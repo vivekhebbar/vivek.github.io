@@ -8,9 +8,7 @@ var game = 'game';
 var about = 'about';
 var projects = 'projects';
 var info = 'info';
-window.onload = function() {
-	//document.getElementById(idTitle).innerHTML = "LOADING...";
-	populate('intro')};
+window.onload = function() {populate('intro')};
 
 // dictionary for image files
 var imageDict = {
@@ -72,7 +70,7 @@ function changeOpacityById(id, newText, startTime, delta=1000) {
 // the board AI.
 
 function populate(slide) {
-	changeOpacityById(idTitle, "LOADING...", 0, 20);
+	changeOpacityById(idTitle, 'LOADING <i class="fa fa-circle-o-notch fa-spin fa-fw" style="color:white;font-size:85%;"></i>', 0, 20);
 	var img = new Image();
 	img.onload = function() {
 		console.log("loaded");
