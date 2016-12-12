@@ -1,6 +1,6 @@
 // conn4 constants
-var CLIENT = 1;
-var COMP = -1;
+var CLIENT = -1;
+var COMP = 1;
 var UNDEF = 0;
 var turn = CLIENT;
 var counter = 0;
