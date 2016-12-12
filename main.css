@@ -20,7 +20,7 @@ body {
   text-align: center;
 }
 #symbol {
-  position: absolute;
+  position: fixed;
   bottom:1%;
   right:1%;
   z:2;
