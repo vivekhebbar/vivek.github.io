@@ -36,7 +36,7 @@ for (i = 0; i < 6; i++) {
 	}
 	gamePresHTML += '</div>';
 } 
-gamePresHTML += '</div><br><h2><a class="link" href="#" onclick=undo()>Undo Move</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="#" class="link" onclick=populate(game)>Reset</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" href="https://github.com/vivekhebbar/vivekhebbar.github.io/blob/master/js/conn4.js" target="_blank">My Code</a></h2>'
+gamePresHTML += '</div><br><h2><a class="link" href="#" onclick=undo()>Undo</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="#" class="link" onclick="setup();populate(game)">Reset</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" href="https://github.com/vivekhebbar/vivekhebbar.github.io/blob/master/js/conn4.js" target="_blank">Code</a></h2>';
 var presHTMLDict = {
 	intro : '<h2>My name is Vivek Hebbar, and this is my website. Care to play a game?</h2></br>',
 	game : gamePresHTML,
@@ -46,7 +46,7 @@ var presHTMLDict = {
 }
 // HTML dictionary for navigation containers
 var naviHTMLDict = {
-	intro : '<h2 style="clear:left;"><a class="link" onclick="populate(game)"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;I&#39;m Game!</a></h2><h2 style="clear:left"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Skip For Now</a></h2>',
+	intro : '<h2 style="clear:left;"><a class="link" onclick="setup();populate(game);"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;I&#39;m Game!</a></h2><h2 style="clear:left"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Skip to About V</a></h2>',
 	game : '<h2 style="clear:left;"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Who am I?</a></h2><h2 style="clear:left"><a class="link" onclick="populate(intro)"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back to Landing</a></h2>',
 	about : '<h2 style="clear:left;"><a class="link" onclick="populate(projects)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;See My Projects</a></h2><h2 style="clear:left"><a class="link" onclick="populate(intro)"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back to Landing</a></h2>',
 	projects : '<h2 style="clear:left;"><a class="link" onclick="populate(info)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Want to Get in Touch?</a></h2><h2 style="clear:left"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back to About V</a></h2>',
@@ -69,7 +69,6 @@ function changeOpacityById(id, newText, startTime, delta=1000) {
 // navigation container. If it is the game slide, initialize
 // the board AI.
 function populate(slide) {
-	if (slide == game) {setup();}
 	changeOpacityById(idTitle, 'LOADING <i class="fa fa-circle-o-notch fa-spin fa-fw" style="color:white;font-size:85%;"></i>', 0, 20);
 	var img = new Image();
 	img.onload = function() {

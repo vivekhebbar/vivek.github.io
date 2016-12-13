@@ -15,6 +15,7 @@ var neighborOrder = [3, 2, 4, 1, 5, 0, 6];
 // Set up board game AI
 function setup() {
 	canClick = true;
+	turn = CLIENT;
 	internal = [], conn4Stack = [];
 	for (i = 0; i < HEIGHT; i++) {
 		internal = internal.concat([[0,0,0,0,0,0,0]]);
@@ -58,19 +59,21 @@ function boardAI() {
 		return;
 	}
 	var possibleMoves = generateNeighboringMoves(internal);
-	var bestSoFar = -MAXINT, bestMove = possibleMoves[0], score = 0;
+	var bestSoFar = -MAXINT, bestMoveSet = [possibleMoves[0]], score = 0;
 	for (var i = 0; i < possibleMoves.length; i++) {
 		var move = possibleMoves[i];
 		internal[move.x][move.y] = COMP;
 		score = minVal(internal, dpth);
-		if (score > bestSoFar) {bestMove = move; bestSoFar = score;}
+		if (score > bestSoFar) {bestMoveSet = [move]; bestSoFar = score;}
+		if (score == bestSoFar) {bestMoveSet.push(move);}
 		internal[move.x][move.y] = UNDEF;
 	}
+	var bestMove = bestMoveSet[Math.floor(Math.random() * bestMoveSet.length)];
 	var compColumn = {y:bestMove.y,player:COMP};
 	conn4Stack.push(compColumn);
 	color(compColumn);
 	//draw
-	if (generateNeighboringMoves(internal) == []) {
+	if (topFull(internal)) {
 		changeOpacityById(idTitle, "DRAW!", 0, 500);
 		canClick = false;
 		return;
@@ -152,6 +155,7 @@ function undo() {
 		canClick = true;
 	}
 }
+
 // Logic to uncolor the conn4 dot for column.player in column column.y
 function remove(column) {
 	var x = 0;
@@ -171,4 +175,11 @@ function generateNeighboringMoves(board) {
 		if (board[0][y] == UNDEF) {neighbors.push({x:x, y:y});}
 	}
 	return neighbors;
+}
+
+function topFull(board) {
+	for (var y = 0; y < WIDTH; y++) {
+		if(board[0][y] == UNDEF) {return false;}
+	}
+	return true;
 }
