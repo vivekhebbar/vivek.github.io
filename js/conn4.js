@@ -94,7 +94,7 @@ function minVal(board, depth) {
 	for (var i = 0; i < possibleMoves.length; i++) {
 		var move = possibleMoves[i];
 		board[move.x][move.y] = CLIENT;
-		score = Math.min(score, maxVal(board, depth - 1));
+		score = Math.min(score, 0.99 * maxVal(board, depth - 1));
 		board[move.x][move.y] = UNDEF;
 	}
 	return score;
@@ -110,7 +110,7 @@ function maxVal(board, depth) {
 	for (var i = 0; i < possibleMoves.length; i++) {
 		var move = possibleMoves[i];
 		board[move.x][move.y] = COMP;
-		score = Math.max(score, minVal(board, depth - 1));
+		score = Math.max(score, 0.99 * minVal(board, depth - 1));
 		board[move.x][move.y] = UNDEF;
 	}
 	return score;
