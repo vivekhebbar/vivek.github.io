@@ -58,7 +58,7 @@ function boardAI() {
 		return;
 	}
 	var possibleMoves = generateNeighboringMoves(internal);
-	var bestSoFar = -MAXINT, bestMove = {}, score = 0;
+	var bestSoFar = -MAXINT, bestMove = possibleMoves[0], score = 0;
 	for (var i = 0; i < possibleMoves.length; i++) {
 		var move = possibleMoves[i];
 		internal[move.x][move.y] = COMP;
@@ -66,8 +66,6 @@ function boardAI() {
 		if (score > bestSoFar) {bestMove = move; bestSoFar = score;}
 		internal[move.x][move.y] = UNDEF;
 	}
-	console.log(bestMove);
-	if(!bestMove.y) {bestMove = possibleMoves[0];}
 	var compColumn = {y:bestMove.y,player:COMP};
 	conn4Stack.push(compColumn);
 	color(compColumn);

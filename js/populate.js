@@ -69,6 +69,7 @@ function changeOpacityById(id, newText, startTime, delta=1000) {
 // navigation container. If it is the game slide, initialize
 // the board AI.
 function populate(slide) {
+	if (slide == game) {setup();}
 	changeOpacityById(idTitle, 'LOADING <i class="fa fa-circle-o-notch fa-spin fa-fw" style="color:white;font-size:85%;"></i>', 0, 20);
 	var img = new Image();
 	img.onload = function() {
@@ -76,9 +77,6 @@ function populate(slide) {
 		changeOpacityById(idTitle, titleHTMLDict[slide], 300, 1300);
 		changeOpacityById(idPresentation, presHTMLDict[slide], 300, 1800);
 		changeOpacityById(idNavi, naviHTMLDict[slide], 300, 1900);
-		if (slide == game) {
-			setTimeout(function(){setup();}, 1900 + 1);
-		};
 	}
 	img.src = imageDict[slide];
 }
