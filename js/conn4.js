@@ -32,7 +32,7 @@ function clientClick(click_id) {
 			conn4Stack.push(clientColumn);
 			color(clientColumn);
 			turn = COMP;
-			boardAI();
+			setTimeout(function(){boardAI();}, 401);
 		}
 	}
 }
@@ -45,9 +45,17 @@ function color(column) {
 		var newDot = document.getElementById("conn4-" + x.toString() + column.y.toString()); 
 		if (column.player == CLIENT) {
 			newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i>';
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:gray;"></i>';}, 100);
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i>';}, 200);
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:gray;"></i>';}, 300);
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i>';}, 400);
 		}
 		if (column.player == COMP) {
 			newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:black;"></i>';
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:gray;"></i>';}, 100);
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:black;"></i>';}, 200);
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:gray;"></i>';}, 300);
+			setTimeout(function(){newDot.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true" style="color:black;"></i>';}, 400);
 		}
 		return x;
 	}
@@ -75,18 +83,20 @@ function boardAI() {
 	conn4Stack.push(compColumn);
 	color(compColumn);
 	//comp win
-	if (eval(internal) == (COMP * MAXINT)) {
-		changeOpacityById(idTitle, "I WIN!!", 0, 500);
-		canClick = false;
-		return;
-	}
-	//draw
-	if (topFull(internal)) {
-		changeOpacityById(idTitle, "DRAW!", 0, 500);
-		canClick = false;
-		return;
-	}
-	turn = CLIENT;
+	setTimeout(function(){
+		if (eval(internal) == (COMP * MAXINT)) {
+			changeOpacityById(idTitle, "I WIN!!", 0, 500);
+			canClick = false;
+			return;
+		}
+		//draw
+		if (topFull(internal)) {
+			changeOpacityById(idTitle, "DRAW!", 0, 500);
+			canClick = false;
+			return;
+		}
+		turn = CLIENT;
+	}, 401);
 }
 // AI minimax
 function minVal(board, depth) {
