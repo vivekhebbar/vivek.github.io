@@ -24,9 +24,7 @@ function setup() {
 }
 
 function updateWLD(WLDdelay=3001) {
-	setTimeout(function() {
-		document.getElementById('conn4-wld').style.opacity = 0;
-	}, WLDdelay)
+	setTimeout(function() {document.getElementById('conn4-wld').style.opacity = 0;}, WLDdelay);
 	setTimeout(function(){
 		var newWLD = winLossDraw[0].toString() + "W, " + winLossDraw[1].toString() +  "L, " + winLossDraw[2].toString() + "D";
 		newWLD += '&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" onclick=clearWLD()>CLEAR</a>';
@@ -37,7 +35,7 @@ function updateWLD(WLDdelay=3001) {
 
 function clearWLD() {
 	winLossDraw = [0,0,0];
-	updateWLD(300);
+	updateWLD(0);
 }
 // When the CLIENT clicks and it is CLIENT's turn, color the chosen column, 
 // switch turns, and call the board AI.

@@ -30,7 +30,7 @@ var titleHTMLDict = {
 var winLossDraw = [0,0,0];
 
 // HTML dictionary for presentation containers
-var gamePresHTML = '<h2 id="conn4-wld">'+ winLossDraw[0].toString() + 'W, ' + winLossDraw[1].toString() +  'L, ' + winLossDraw[2].toString() + 'D&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" onclick=clearWLD()>CLEAR</a></h2><div class="container" id="conn4-container">';
+var gamePresHTML = '<h2 id="conn4-wld" style="opacity:0;">'+ winLossDraw[0].toString() + 'W, ' + winLossDraw[1].toString() +  'L, ' + winLossDraw[2].toString() + 'D&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" onclick=clearWLD()>CLEAR</a></h2><div class="container" id="conn4-container">';
 for (i = 0; i < 6; i++) {
 	gamePresHTML += '<div class="row" style="clear: left">';
 	for(j = 0; j < 7; j++) {
