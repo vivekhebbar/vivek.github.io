@@ -27,8 +27,10 @@ var titleHTMLDict = {
 	projects : 'PAST & PRESENT PROJECTS',
 	info : 'CONTACT ME'
 }
+var winLossDraw = [0,0,0];
+
 // HTML dictionary for presentation containers
-var gamePresHTML = '<div class="container" id="conn4-container">'
+var gamePresHTML = '<h2 id="conn4-wld">W: '+ winLossDraw[0].toString() + ' L: ' + winLossDraw[1].toString() +  ' D: ' + winLossDraw[2].toString() + '</h2><div class="container" id="conn4-container">';
 for (i = 0; i < 6; i++) {
 	gamePresHTML += '<div class="row" style="clear: left">';
 	for(j = 0; j < 7; j++) {
@@ -36,7 +38,7 @@ for (i = 0; i < 6; i++) {
 	}
 	gamePresHTML += '</div>';
 } 
-gamePresHTML += '</div><br><h2><a class="link" href="#" onclick=undo()>UNDO</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="#" class="link" onclick="setup();populate(game)">RESET</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" href="https://github.com/vivekhebbar/vivekhebbar.github.io/blob/master/js/conn4.js" target="_blank">CODE</a></h2>';
+gamePresHTML += '</div><br><h2><a class="link" href="#" onclick=undo()>UNDO</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="#" class="link" onclick="setup();populate(game);setTimeout(function(){updateWLD();}, 3001);">RESET</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" href="https://github.com/vivekhebbar/vivekhebbar.github.io/blob/master/js/conn4.js" target="_blank">CODE</a></h2>';
 var presHTMLDict = {
 	intro : '<h2>My name is Vivek Hebbar, and this is my website. Care to play a game?</h2></br>',
 	game : gamePresHTML,
@@ -46,7 +48,7 @@ var presHTMLDict = {
 }
 // HTML dictionary for navigation containers
 var naviHTMLDict = {
-	intro : '<h2 style="clear:left;"><a class="link" onclick="setup();populate(game);"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;I&#39;m Game!</a></h2><h2 style="clear:left"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Skip to About V</a></h2>',
+	intro : '<h2 style="clear:left;"><a class="link" onclick="setup();populate(game);setTimeout(function(){updateWLD();}, 3001);"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;I&#39;m Game!</a></h2><h2 style="clear:left"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Skip to About V</a></h2>',
 	game : '<h2 style="clear:left;"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Who am I?</a></h2><h2 style="clear:left"><a class="link" onclick="populate(intro)"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back to Landing</a></h2>',
 	about : '<h2 style="clear:left;"><a class="link" onclick="populate(projects)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;See My Projects</a></h2><h2 style="clear:left"><a class="link" onclick="populate(intro)"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back to Landing</a></h2>',
 	projects : '<h2 style="clear:left;"><a class="link" onclick="populate(info)"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;Want to Get in Touch?</a></h2><h2 style="clear:left"><a class="link" onclick="populate(about)"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back to About V</a></h2>',

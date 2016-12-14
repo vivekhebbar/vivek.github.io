@@ -21,6 +21,13 @@ function setup() {
 		internal = internal.concat([[0,0,0,0,0,0,0]]);
 	}
 }
+
+function updateWLD() {
+	console.log(winLossDraw);
+	var newWLD = "W: " + winLossDraw[0].toString() + " L: " + winLossDraw[1].toString() +  " D: " + winLossDraw[2].toString();
+	console.log(newWLD);
+	document.getElementById('conn4-wld').innerHTML = newWLD;
+}
 // When the CLIENT clicks and it is CLIENT's turn, color the chosen column, 
 // switch turns, and call the board AI.
 function clientClick(click_id) {
@@ -65,6 +72,8 @@ function boardAI() {
 	//client win
 	if (eval(internal) == (CLIENT * MAXINT)) {
 		changeOpacityById(idTitle, "YOU WIN!", 0, 500);
+		winLossDraw[0] += 1;
+		updateWLD();
 		canClick = false;
 		return;
 	}
@@ -86,12 +95,16 @@ function boardAI() {
 	setTimeout(function(){
 		if (eval(internal) == (COMP * MAXINT)) {
 			changeOpacityById(idTitle, "I WIN!!", 0, 500);
+			winLossDraw[1] += 1;
+			updateWLD();
 			canClick = false;
 			return;
 		}
 		//draw
 		if (topFull(internal)) {
 			changeOpacityById(idTitle, "DRAW!", 0, 500);
+			winLossDraw[2] += 1;
+			updateWLD();
 			canClick = false;
 			return;
 		}
