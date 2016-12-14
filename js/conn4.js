@@ -28,10 +28,12 @@ function clientClick(click_id) {
 		if (document.getElementById(idTitle).innerHTML != "CONNECT FOUR") {changeOpacityById(idTitle, "CONNECT FOUR", 0, 500);}
 		var y = parseInt(click_id.substring(7,8));
 		var clientColumn = {y:y, player:CLIENT};
-		conn4Stack.push(clientColumn);
-		color(clientColumn);
-		turn = COMP;
-		boardAI();
+		if (internal[0][y] == UNDEF) {
+			conn4Stack.push(clientColumn);
+			color(clientColumn);
+			turn = COMP;
+			boardAI();
+		}
 	}
 }
 // Logic to color the conn4 dot for column.player in column column.y
@@ -72,15 +74,15 @@ function boardAI() {
 	var compColumn = {y:bestMove.y,player:COMP};
 	conn4Stack.push(compColumn);
 	color(compColumn);
-	//draw
-	if (topFull(internal)) {
-		changeOpacityById(idTitle, "DRAW!", 0, 500);
-		canClick = false;
-		return;
-	}
 	//comp win
 	if (eval(internal) == (COMP * MAXINT)) {
 		changeOpacityById(idTitle, "I WIN!!", 0, 500);
+		canClick = false;
+		return;
+	}
+	//draw
+	if (topFull(internal)) {
+		changeOpacityById(idTitle, "DRAW!", 0, 500);
 		canClick = false;
 		return;
 	}
@@ -155,7 +157,6 @@ function undo() {
 		canClick = true;
 	}
 }
-
 // Logic to uncolor the conn4 dot for column.player in column column.y
 function remove(column) {
 	var x = 0;
