@@ -5,7 +5,7 @@
 }
 html {
   height: 100%;
-/*  overflow: hidden;*/
+  overflow: hidden;
 }
 body {
   background: url('img/earth.jpg') no-repeat center center fixed;
@@ -20,7 +20,7 @@ body {
   width: 100%;
   text-align: center;
   height: 100%;
-/*  overflow: auto;*/
+  overflow: auto;
 }
 #symbol {
   position: fixed;
