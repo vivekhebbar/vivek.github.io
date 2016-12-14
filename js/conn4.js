@@ -11,6 +11,7 @@ var canClick = true;
 var conn4Stack = [];
 var internal = [];
 var neighborOrder = [3, 2, 4, 1, 5, 0, 6];
+var WLDtimeDelay = 3001;
 
 // Set up board game AI
 function setup() {
@@ -22,11 +23,21 @@ function setup() {
 	}
 }
 
-function updateWLD() {
-	console.log(winLossDraw);
-	var newWLD = "W: " + winLossDraw[0].toString() + " L: " + winLossDraw[1].toString() +  " D: " + winLossDraw[2].toString();
-	console.log(newWLD);
-	document.getElementById('conn4-wld').innerHTML = newWLD;
+function updateWLD(WLDdelay=3001) {
+	setTimeout(function() {
+		document.getElementById('conn4-wld').style.opacity = 0;
+	}, WLDdelay)
+	setTimeout(function(){
+		var newWLD = winLossDraw[0].toString() + "W, " + winLossDraw[1].toString() +  "L, " + winLossDraw[2].toString() + "D";
+		newWLD += '&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" onclick=clearWLD()>CLEAR</a>';
+		document.getElementById('conn4-wld').innerHTML = newWLD;
+		document.getElementById('conn4-wld').style.opacity = 1;
+	}, WLDdelay + 250);
+}
+
+function clearWLD() {
+	winLossDraw = [0,0,0];
+	updateWLD(300);
 }
 // When the CLIENT clicks and it is CLIENT's turn, color the chosen column, 
 // switch turns, and call the board AI.
@@ -73,7 +84,7 @@ function boardAI() {
 	if (eval(internal) == (CLIENT * MAXINT)) {
 		changeOpacityById(idTitle, "YOU WIN!", 0, 500);
 		winLossDraw[0] += 1;
-		updateWLD();
+		updateWLD(500);
 		canClick = false;
 		return;
 	}
@@ -96,7 +107,7 @@ function boardAI() {
 		if (eval(internal) == (COMP * MAXINT)) {
 			changeOpacityById(idTitle, "I WIN!!", 0, 500);
 			winLossDraw[1] += 1;
-			updateWLD();
+			updateWLD(300);
 			canClick = false;
 			return;
 		}
@@ -104,7 +115,7 @@ function boardAI() {
 		if (topFull(internal)) {
 			changeOpacityById(idTitle, "DRAW!", 0, 500);
 			winLossDraw[2] += 1;
-			updateWLD();
+			updateWLD(300);
 			canClick = false;
 			return;
 		}

@@ -63,6 +63,9 @@ h2 {
   padding-bottom: 0px;
   opacity: 0;
 }
+#conn4-wld {
+  transition: opacity 0.25s linear;
+}
 .conn4-circle {
   border-radius: 50%;
   display: inline-block;
