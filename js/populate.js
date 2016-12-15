@@ -38,7 +38,7 @@ for (i = 0; i < 6; i++) {
 	}
 	gamePresHTML += '</div>';
 } 
-gamePresHTML += '</div><br><h2><a class="link" href="#" onclick=undo()>UNDO</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="#" class="link" onclick="setup();populate(game);updateWLD();">RESET</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="link" href="https://github.com/vivekhebbar/vivekhebbar.github.io/blob/master/js/conn4.js" target="_blank">CODE</a></h2>';
+gamePresHTML += '</div><br><h2><a class="link" href="#" onclick=undo()>UNDO</a>&nbsp;||&nbsp;&nbsp;<a href="#" class="link" onclick="setup();populate(game);updateWLD();">RESET</a>&nbsp;&nbsp;||&nbsp;<a class="link" href="https://github.com/vivekhebbar/vivekhebbar.github.io/blob/master/js/conn4.js" target="_blank">CODE</a></h2>';
 var presHTMLDict = {
 	intro : '<h2>My name is Vivek Hebbar, and this is my website. Care to play a game?</h2></br>',
 	game : gamePresHTML,
